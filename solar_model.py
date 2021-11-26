@@ -23,13 +23,13 @@ def calculate_force(body, space_objects):
         alpha = abs(math.atan((body.y - obj.y) / (body.x - obj.x)))
         F = gravitational_constant * body.m * obj.m / rr
         if body.x < obj.x:
-            body.Fx += F * math.cos(alpha)  ### FIXME: нужно вывести формулу...
+            body.Fx += (F * math.cos(alpha))  ### FIXME: нужно вывести формулу...
         else:
-            body.Fx -= F * math.sin(alpha)
+            body.Fx -= (F * math.cos(alpha))
         if body.y < obj.y:
-            body.Fy += F * math.cos(alpha)  ### FIXME: нужно вывести формулу...
+            body.Fy += (F * math.sin(alpha))  ### FIXME: нужно вывести формулу...
         else:
-            body.Fy -= F * math.sin(alpha)
+            body.Fy -= (F * math.sin(alpha))
 
 
 def move_space_object(body, dt):
